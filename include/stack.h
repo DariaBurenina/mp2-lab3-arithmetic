@@ -33,8 +33,6 @@ class Stack
 
 
 
-
-
 template <class T>
 Stack<T> :: Stack(int n)
 {
@@ -97,11 +95,4 @@ Stack<T> :: ~Stack()
 	delete []st;
 }
 
-
-//std::ostream& operator<<(std::ostream &os, const Stack &s)
-//  {
-//	  for( int i = 0; i < s.Top + 1; i++) 
-//		os << s.st[i] << ' ';
-//    return os;
-//  }
 #endif

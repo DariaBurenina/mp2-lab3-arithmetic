@@ -1,19 +1,5 @@
-#ifndef __ARITHMETIC_H__
-#define __ARITHMETIC_H__
-
+#include <string.h>
+#include <memory.h>
 #include <iostream>
 
-using namespace std;
-
-class Arithmetic
-{
-public:
-	char *str;
-	int N; // количество символов
-
-
-	Arithmetic( int n);
-	Arithmetic(const Arithmetic &st);
-	//Arithme
-};
-#endif
+void Check_the_brackets ( char *s);
