@@ -1,4 +1,5 @@
 #include "arithmetic.h"
+#include <cstring>
 #include <iostream>
 using namespace std;
 
@@ -8,7 +9,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	cout << "¬ведите выражение, которое хотите вычислить"
     << endl;
-    gets(str);
+    gets_s(str);
 	/*cout << str
     << endl;*/
 	system("pause");

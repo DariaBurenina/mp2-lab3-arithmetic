@@ -21,6 +21,7 @@ class Stack
 		T Get();  //  получиить элемент с удалением
 		bool IsEmpty();  //  проверка пустоты
 		bool IsFull();  //  проверка полноты
+		bool Is_Not_Empty_And_Not_Full();
 		~Stack();  //  деструктор
 
 		friend ostream& operator<<(ostream &os, const Stack &s)
@@ -88,6 +89,16 @@ bool Stack<T> :: IsFull()
 	else 
 		return false;
 }
+
+template <class T>
+bool Stack<T> :: Is_Not_Empty_And_Not_Full()
+{
+	if((Top > (-1)) && ( Top < N))
+		return true;
+	else 
+		return false;
+}
+
 
 template <class T>
 Stack<T> :: ~Stack()
