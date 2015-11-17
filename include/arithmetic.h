@@ -35,6 +35,7 @@ void Partition ( char *s)
 				k2++;
 			}
 		}
+		//return *type1,*type2;
 }
 
 
