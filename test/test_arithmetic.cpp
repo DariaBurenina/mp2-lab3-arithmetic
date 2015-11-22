@@ -1,23 +1,15 @@
 #include <gtest.h>
 #include "arithmetic.h"
+#include <iosream.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
-TEST(Arithmetic, can_do_partition_into_variables)
+
+TEST(Arithmetic, can_do_partition)
 {
 	char temp[] = "a+b*c-7+t";
-	ASSERT_NO_THROW(Partition_into_variables (temp));
-}
-
-TEST(Arithmetic, can_do_partition_into_signs)
-{
-	char temp[] = "a+b*c-7+t";
-	ASSERT_NO_THROW(Partition_into_signs (temp));
-}
-
-TEST(Arithmetic, can_do_partition_into_figures)
-{
-	char temp[] = "a+b*c-7+t";
-	ASSERT_NO_THROW(Partition_into_figures (temp));
+	ASSERT_NO_THROW(Partition (temp));
 }
 
 
@@ -87,3 +79,5 @@ TEST(Arithmetic, can_check_of_operatoins_and_operandsdqf)
 	char temp[] = "(5+4)*9*a+1";
 	EXPECT_EQ(true, Check_of_operatoins_and_operands(temp));
 }
+
+
