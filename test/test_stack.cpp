@@ -59,6 +59,15 @@
 //	ASSERT_NO_THROW ( a.Get() );
 //}
 //
+//TEST(Stack, if_get_element_it_will_be_delete)
+//{
+//	Stack<int> a(9);
+//	for (int i = 0; i < 9; i++)
+//		a.Push(i);
+//	 EXPECT_EQ( a.Get(), 8 );
+//	 EXPECT_EQ( a.Get(), 7 );
+//}
+//
 //TEST(Stack, element_is_removed_when_getting_it)
 //{
 //	int temp1, temp2;
