@@ -13,6 +13,8 @@ int main()
 		 << endl;
 		cout << "ќбращаю внимание на то, что в качестве переменных можно использовать только латинские буквы."
 		 << endl;
+		cout << "ƒл€ разделени€ целой и дробной части используйте зап€тую."
+		 << endl;
 		 gets_s(string);
 		cout << endl; 
 
@@ -24,7 +26,7 @@ int main()
 		cout << endl << endl;
 		}
 
-		if( Is_used_variables(string) == true )
+		if( Are_used_variables(string) == true )
 		{
 			char string1[256];
 

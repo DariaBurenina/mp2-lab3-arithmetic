@@ -1,6 +1,7 @@
 #include "arithmetic.h"
 #include <string.h>
 #include <memory.h>
+#include <cstring>
 #include <iostream>
 
 bool Check_the_brackets ( char *s) 
@@ -68,7 +69,7 @@ int Type( char a)
 	return temp;
 }
 
-int Prioritet ( char a)
+int Priority ( char a)
 {
 	setlocale(LC_ALL, "Russian");
 	int temp = 0;
@@ -80,7 +81,7 @@ int Prioritet ( char a)
 }
 
 
-bool Is_used_variables (char *s)
+bool Are_used_variables (char *s)
 {
 	bool temp = false;
 	for ( int i = 0; i < strlen(s); i++)
@@ -133,10 +134,10 @@ double Calculation ( char *s)
 	{
 		if(Type(s[i]) == 2)
 		{
-			if (( s[i+1] != '\0' ) && (( s[i+1] == '.' ) || ( Type(s[i+1]) == 2 )) )
+			if (( s[i+1] != '\0' ) && (( s[i+1] == ',' ) || ( Type(s[i+1]) == 2 )) )
 			{
 				int pos = i + 1;
-				while (( pos < strlen(s)) && ((isdigit( s[pos] ))) || ( s[pos] == '.' ))
+				while (( pos < strlen(s)) && ((isdigit( s[pos] ))) || ( s[pos] == ',' ))
 					pos++;
 				strncpy ( post[j], s + i, pos - i );
 				post[j][pos - i] = '\0';
@@ -150,7 +151,7 @@ double Calculation ( char *s)
 				j++;
 			}
 		}
-		if (( Type(s[i]) == 3 )&&(Prioritet(s[i]) != 0))
+		if (( Type(s[i]) == 3 )&&(Priority(s[i]) != 0))
 		{
 			if ( st.IsEmpty() == true )
 				st.Push( s[i] );
@@ -158,7 +159,7 @@ double Calculation ( char *s)
 			{
 				char flag1 = st.Get();
 				st.Push( flag1 );				
-				while ((!st.IsEmpty() && (Prioritet(s[i]) <= Prioritet(flag1))))
+				while ((!st.IsEmpty() && (Priority(s[i]) <= Priority(flag1))))
 				{
 					post[j][0] = st.Get();
 					post[j][1] = '\0';
@@ -201,12 +202,12 @@ double Calculation ( char *s)
 	while ( post[l][0] != '\0')
 	{	
 		if ( Type(post[l][0]) == 2 ) 
-			if (( post[l][1] != '\0' ) && (( post[l][1] == '.' ) || ( Type(post[l][1]) == 2 )) )
+			if (( post[l][1] != '\0' ) && (( post[l][1] == ',' ) || ( Type(post[l][1]) == 2 )) )
 			{
 				int s = 0;
 				while ( post[l][s] != '\0')
 				{
-					if (post[l][s] != '.')
+					if (post[l][s] != ',')
 						s++;
 					else 
 					{
@@ -220,7 +221,7 @@ double Calculation ( char *s)
 					int r = 0;
 					while ( post[l][r] != '\0')
 						r++;
-					post[l][r+1] = '.';
+					post[l][r+1] = ',';
 					post[l][r+2] = '0';
 					post[l][r+3] = '\0';
 					int x = atof (post[l]);
@@ -229,7 +230,7 @@ double Calculation ( char *s)
 			}
 			else
 			{
-				post[l][1] = '.';
+				post[l][1] = ',';
 				post[l][2] = '0';
 				post[l][3] = '\0';
 				int x = atof (post[l]);
