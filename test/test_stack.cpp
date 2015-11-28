@@ -1,19 +1,15 @@
 #include "stack.h"
 #include <gtest.h>
 
-
-
 TEST(Stack, can_create_stack_with_positive_size)
 {
   ASSERT_NO_THROW(Stack<int> a(3));
 }
 
-
 TEST(Stack, throws_when_create_stack_with_negative_size)
 {
   ASSERT_ANY_THROW(Stack<int> a(-3));
 }
-
 
 TEST(Stack, new_stack_is_empty)
 {
@@ -40,7 +36,6 @@ TEST(Stack, can_push_element)
 	ASSERT_NO_THROW( a.Push(3));
 }
 
-
 TEST(Stack, can_copy)
 {
 	const int k = 4;
@@ -48,7 +43,6 @@ TEST(Stack, can_copy)
 	for (int i = 0; i < k; i++)
 		a.Push(i);
 	ASSERT_NO_THROW ( Stack<int> b(a) );
-
 }
 
 TEST(Stack, can_get_element)
@@ -91,7 +85,6 @@ TEST(Stack, index_of_first_element_is_increased_when_push_the_element )
 	temp2 = a.Top;
 	EXPECT_EQ( temp1 + 1, temp2);
 }
-
 
 TEST(Stack, return_true_when_stack_is_full)
 {

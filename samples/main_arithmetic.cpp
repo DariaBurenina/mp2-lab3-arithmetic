@@ -68,7 +68,5 @@ int main()
 			cout << string << " = " << result
 			<< endl;
 		}
-
-
 	system("pause");
 }
