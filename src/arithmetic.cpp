@@ -50,7 +50,6 @@ bool Check_of_operatoins_and_operands( char *s)
 								return false; 
 	if (( s[0] == '*') || ( s[0] == '+') || ( s[0] == '/') )// проверка: знаки *, +, / в начале строки 
 		return false;
-
 	return true;
 }
 
@@ -79,7 +78,6 @@ int Priority ( char a)
 		temp = 2;
 	return temp;
 }
-
 
 bool Are_used_variables (char *s)
 {
@@ -121,7 +119,6 @@ void Assigning_values_to_variables (char* s)
 		}
 	}
 }
-
 
 double Calculation ( char *s)
 {
