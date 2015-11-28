@@ -122,10 +122,10 @@ void Assigning_values_to_variables (char* s)
 
 double Calculation ( char *s)
 {
-	Stack<char> st(20);
+	Stack<char> st(50);
 	int j, ind, k;
 	j = 0;
-	char post[256][10];
+	char post[256][15];
 	double result;
 	for( int i = 0; i < strlen(s); i++)
 	{
@@ -194,7 +194,7 @@ double Calculation ( char *s)
 		}
 	post[j][0] = '\0';
 
-	Stack<double> stack_for_computing(20);
+	Stack<double> stack_for_computing(50);
 	int l = 0;
 	while ( post[l][0] != '\0')
 	{	
@@ -247,7 +247,7 @@ double Calculation ( char *s)
 			}
 			stack_for_computing.Push( res );
 		}
-		l++;
+	l++;
 	}
 	result = stack_for_computing.Get();
 	return result;
