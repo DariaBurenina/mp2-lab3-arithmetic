@@ -1,3 +1,4 @@
+//переменные, унарный минус
 #include "arithmetic.h"
 #include <cstring>
 #include <iostream>
@@ -6,6 +7,7 @@ using namespace std;
 int main()
 {	
 	char string[256];
+	char** post;
 	double result;
 	setlocale(LC_ALL, "Russian");
 	cout << "Введите выражение, которое хотите вычислить(не более 256 знаков)."
@@ -41,7 +43,7 @@ int main()
 		if (i == 1)
 		{
 			char string2[256];
-			Assigning_values_to_variables(string1);
+			Assigning_values_to_variables(string1);///
 			Assigment_of_lines( string1, string2 );
 			result = Calculation (string1);
 			cout << string1 << " = " << result
@@ -50,9 +52,12 @@ int main()
 	}
 	else
 	{
-		result = Calculation (string);
+		//result = Calculation(string);
+		ToPostfix(string, post);
+		result = Calc(post);
 		cout << string << " = " << result
 		<< endl;
+		Free(post, strlen(string));
 	}
 	system("pause");
 }
